@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Music } from "lucide-react";
+import profileAsset from "@/assets/profile.png.asset.json";
+
 
 const stats = [
   { label: "Year B.Tech", value: "2nd" },
@@ -41,9 +43,11 @@ export function About() {
               style={{ background: "var(--gradient-primary)" }}
             />
             <div className="glass relative grid h-full place-items-center overflow-hidden rounded-3xl">
-              <div className="font-display text-[10rem] font-bold leading-none text-gradient opacity-90">
-                DR
-              </div>
+              <img
+                src={profileAsset.url}
+                alt="Deepak Raj R"
+                className="h-full w-full object-cover"
+              />
               <div className="absolute inset-x-6 bottom-6 flex items-center gap-2 rounded-full glass px-3 py-2">
                 <Music size={14} className="text-cyan" />
                 <span className="font-mono text-xs">Music Composer for Short Films</span>
