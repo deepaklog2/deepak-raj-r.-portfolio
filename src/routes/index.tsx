@@ -1,29 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { CustomCursor } from "@/components/portfolio/CustomCursor";
+import { Background } from "@/components/portfolio/Background";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Skills } from "@/components/portfolio/Skills";
+import { Experience } from "@/components/portfolio/Experience";
+import { Projects } from "@/components/portfolio/Projects";
+import { Achievements } from "@/components/portfolio/Achievements";
+import { Contact } from "@/components/portfolio/Contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Deepak Raj R — Full Stack Developer & AI Specialist" },
+      { name: "description", content: "Portfolio of Deepak Raj R — Full Stack Developer & AI Specialist based in Chennai, India. Building scalable, intelligent digital experiences." },
+      { property: "og:title", content: "Deepak Raj R — Full Stack Developer & AI Specialist" },
+      { property: "og:description", content: "Full Stack Developer & AI Specialist building scalable, intelligent digital experiences." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen overflow-x-hidden">
+      <CustomCursor />
+      <Background />
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Achievements />
+        <Contact />
+      </main>
+      <Toaster />
     </div>
   );
 }
